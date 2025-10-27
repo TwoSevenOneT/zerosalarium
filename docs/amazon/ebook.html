@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ad Panel</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .ad-panel {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 360px;
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .ad-panel img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
+
+    .ad-panel h3 {
+      margin: 10px 0;
+      font-size: 1.4em;
+      color: #333;
+    }
+
+    .ad-panel p {
+      font-size: 1em;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .ad-panel a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .ad-panel a:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+
+      .ad-panel {
+        padding: 15px;
+      }
+
+      .ad-panel h3 {
+        font-size: 1.2em;
+      }
+
+      .ad-panel p {
+        font-size: 0.95em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="ad-panel">
+    <img src="https://m.media-amazon.com/images/I/71Bzl3-gCqL._SY425_.jpg" alt="Product Image">
+    <h3>Product Name</h3>
+    <p>Short description of the product goes here. Highlight key features or benefits to attract attention.</p>
+    <a href="https://m.media-amazon.com/images/I/71Bzl3-gCqL._SY425_.jpgK" target="_blank">Get It</a>
+  </div>
+</body>
+</html>
