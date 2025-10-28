@@ -2,105 +2,88 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Ad Panel</title>
   <style>
-    /* Root: remove browser default spacing and ensure full-height */
+    /* Make the document fill the iframe and be transparent */
     html, body {
-      margin: 0;
-      padding: 0;
       height: 100%;
       width: 100%;
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
-      overflow: hidden; /* prevent scrollbars inside iframe */
       background: transparent;
+      overflow: hidden; /* prevent scrollbars inside iframe */
       font-family: Arial, sans-serif;
     }
 
-    /* Make body act as the viewport container for the panel */
+    /* Body is the container that stretches the child to full height */
     body {
       display: flex;
-      align-items: stretch; /* stretch child to full height */
-      justify-content: center;
+      align-items: stretch;
+      justify-content: stretch;
     }
 
-    /* Panel fills the iframe area but respects a sensible max width */
+    /* Panel should fill entire iframe area */
     .ad-panel {
-      box-sizing: border-box;
       width: 100%;
-      max-width: 360px;
       height: 100%;
       margin: 0;
-      padding: 12px;
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 8px;           /* small internal padding only */
+      box-sizing: border-box;
+      background-color: #ffffff; /* content background */
+      border: none;           /* remove border that shows background */
+      border-radius: 0;       /* remove rounding that reveals parent bg */
+      box-shadow: none;       /* remove shadow that creates visible gap */
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      overflow: hidden; /* avoid internal overflow */
+      gap: 8px;
+      overflow: hidden;
     }
 
+    /* Image responsive but not forcing panel overflow */
     .ad-panel img {
       width: 100%;
-      max-width: 220px;
+      max-width: 320px;
       height: auto;
-      border-radius: 6px;
       display: block;
+      border-radius: 0;
     }
 
-    .ad-panel h3 {
+    .ad-panel h3, .ad-panel p {
       margin: 0;
-      font-size: 1.1rem;
-      color: #333;
       text-align: center;
-      line-height: 1.2;
+      color: #222;
     }
 
     .ad-panel p {
-      margin: 0;
-      color: #555;
+      padding: 0 6px;
       font-size: 0.95rem;
-      text-align: center;
+      color: #444;
     }
 
     .ad-panel a {
       display: inline-block;
-      padding: 10px 16px;
-      background-color: #007BFF;
+      padding: 8px 14px;
+      background: #007bff;
       color: #fff;
       text-decoration: none;
-      border-radius: 5px;
-      font-weight: 700;
+      border-radius: 4px;
+      font-weight: 600;
     }
 
-    /* Mobile: ensure everything fits without internal scrollbars */
+    /* Mobile tweaks */
     @media (max-width: 480px) {
-      html, body {
-        height: 100%;
-      }
-
       .ad-panel {
-        max-width: 100%;
-        padding: 10px;
-        border-radius: 4px;
-        box-shadow: none;
+        padding: 6px;
       }
-
       .ad-panel img {
-        max-width: 160px;
+        max-width: 200px;
       }
-
-      .ad-panel h3 {
-        font-size: 1rem;
-      }
-
-      .ad-panel p {
-        font-size: 0.9rem;
-      }
+      .ad-panel h3 { font-size: 1rem; }
+      .ad-panel p { font-size: 0.9rem; }
     }
   </style>
 </head>
