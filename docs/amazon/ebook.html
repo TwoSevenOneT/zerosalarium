@@ -1,101 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ad Panel</title>
   <style>
-    body {
+    /* Root: remove browser default spacing and ensure full-height */
+    html, body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      width: 100%;
       height: 100%;
-      overflow-x: hidden;
+      width: 100%;
+      box-sizing: border-box;
+      overflow: hidden; /* prevent scrollbars inside iframe */
+      background: transparent;
       font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 90vh;
     }
 
+    /* Make body act as the viewport container for the panel */
+    body {
+      display: flex;
+      align-items: stretch; /* stretch child to full height */
+      justify-content: center;
+    }
+
+    /* Panel fills the iframe area but respects a sensible max width */
     .ad-panel {
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 360px;
+      height: 100%;
+      margin: 0;
+      padding: 12px;
       background-color: #fff;
       border: 1px solid #ddd;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      max-width: 360px;
-      width: 100%;
-      padding: 0;
-      text-align: center;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      overflow: hidden; /* avoid internal overflow */
     }
 
     .ad-panel img {
-      width: 80%;
+      width: 100%;
+      max-width: 220px;
       height: auto;
       border-radius: 6px;
-      margin-bottom: 15px;
+      display: block;
     }
 
     .ad-panel h3 {
-      margin: 10px 0;
-      font-size: 1.4em;
+      margin: 0;
+      font-size: 1.1rem;
       color: #333;
+      text-align: center;
+      line-height: 1.2;
     }
 
     .ad-panel p {
-      font-size: 1em;
+      margin: 0;
       color: #555;
-      margin-bottom: 20px;
-      text-align: left;
+      font-size: 0.95rem;
+      text-align: center;
     }
 
     .ad-panel a {
       display: inline-block;
-      padding: 10px 20px;
+      padding: 10px 16px;
       background-color: #007BFF;
       color: #fff;
       text-decoration: none;
       border-radius: 5px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
+      font-weight: 700;
     }
 
-    .ad-panel a:hover {
-      background-color: #0056b3;
-    }
-
+    /* Mobile: ensure everything fits without internal scrollbars */
     @media (max-width: 480px) {
-      
-      body {
+      html, body {
+        height: 100%;
+      }
+
+      .ad-panel {
+        max-width: 100%;
         padding: 10px;
+        border-radius: 4px;
+        box-shadow: none;
       }
 
       .ad-panel img {
-          width: 35%;
-        }
-      
-      .ad-panel {
-        padding: 15px;
+        max-width: 160px;
       }
 
       .ad-panel h3 {
-        font-size: 1.2em;
+        font-size: 1rem;
       }
 
       .ad-panel p {
-        font-size: 0.95em;
+        font-size: 0.9rem;
       }
     }
   </style>
 </head>
 <body>
   <div class="ad-panel">
-    <img src="https://m.media-amazon.com/images/I/71Bzl3-gCqL._SY425_.jpg" alt="Product Image">
+    <img src="https://m.media-amazon.com/images/I/71Bzl3-gCqL._SY425_.jpg" alt="Product Image" />
     <h3>Product Name</h3>
     <p>Short description of the product goes here. Highlight key features or benefits to attract attention.</p>
-    <a href="https://m.media-amazon.com/images/I/71Bzl3-gCqL._SY425_.jpgK" target="_blank">Get It</a>
+    <a href="https://m.media-amazon.com/images/I/71Bzl3-gCqL._SY425_.jpg" target="_blank" rel="noopener noreferrer">Get It</a>
   </div>
 </body>
 </html>
