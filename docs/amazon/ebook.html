@@ -13,7 +13,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 90vh;
+      min-height: 100vh;
     }
 
     .ad-panel {
@@ -66,13 +66,21 @@
       
       body {
         padding: 10px;
+        overflow-x: hidden; /* Prevent horizontal scroll */
+        width: 100%;
+        box-sizing: border-box;
       }
 
       .ad-panel img {
-          width: 35%;
+          width: 100%; /* Make image responsive */
+          height: auto;
+          max-width: 100%;
+          display: block;
         }
       
       .ad-panel {
+        width: 100%;
+        box-sizing: border-box;
         padding: 15px;
       }
 
