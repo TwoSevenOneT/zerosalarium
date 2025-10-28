@@ -1,98 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ad Panel</title>
   <style>
-    /* Make the document fill the iframe and be transparent */
-    html, body {
-      height: 100%;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      background: transparent;
-      overflow: hidden; /* prevent scrollbars inside iframe */
-      font-family: Arial, sans-serif;
-    }
-
-    /* Body is the container that stretches the child to full height */
     body {
-      display: flex;
-      align-items: stretch;
-      justify-content: stretch;
-    }
-
-    /* Panel should fill entire iframe area */
-    .ad-panel {
-      width: 100%;
-      height: 100%;
       margin: 0;
-      padding: 8px;           /* small internal padding only */
-      box-sizing: border-box;
-      background-color: #ffffff; /* content background */
-      border: none;           /* remove border that shows background */
-      border-radius: 0;       /* remove rounding that reveals parent bg */
-      box-shadow: none;       /* remove shadow that creates visible gap */
+      padding: 18px;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      gap: 8px;
-      overflow: hidden;
+      align-items: center;
+      min-height: 100vh;
     }
 
-    /* Image responsive but not forcing panel overflow */
-    .ad-panel img {
+    .ad-panel {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 360px;
       width: 100%;
-      max-width: 320px;
-      height: auto;
-      display: block;
-      border-radius: 0;
+      padding: 20px;
+      text-align: center;
     }
 
-    .ad-panel h3, .ad-panel p {
-      margin: 0;
-      text-align: center;
-      color: #222;
+    .ad-panel img {
+      width: 80%;
+      height: auto;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
+
+    .ad-panel h3 {
+      margin: 10px 0;
+      font-size: 1.4em;
+      color: #333;
     }
 
     .ad-panel p {
-      padding: 0 6px;
-      font-size: 0.95rem;
-      color: #444;
+      font-size: 1em;
+      color: #555;
+      margin-bottom: 20px;
+      text-align: left;
     }
 
     .ad-panel a {
       display: inline-block;
-      padding: 8px 14px;
-      background: #007bff;
+      padding: 10px 20px;
+      background-color: #007BFF;
       color: #fff;
       text-decoration: none;
-      border-radius: 4px;
-      font-weight: 600;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
     }
 
-    /* Mobile tweaks */
+    .ad-panel a:hover {
+      background-color: #0056b3;
+    }
+
     @media (max-width: 480px) {
-      .ad-panel {
-        padding: 6px;
+      
+      body {
+        padding: 10px;
       }
+
       .ad-panel img {
-        max-width: 200px;
+          width: 35%;
+        }
+      
+      .ad-panel {
+        padding: 15px;
       }
-      .ad-panel h3 { font-size: 1rem; }
-      .ad-panel p { font-size: 0.9rem; }
+
+      .ad-panel h3 {
+        font-size: 1.2em;
+      }
+
+      .ad-panel p {
+        font-size: 0.95em;
+      }
     }
   </style>
 </head>
 <body>
   <div class="ad-panel">
-    <img src="https://m.media-amazon.com/images/I/71Bzl3-gCqL._SY425_.jpg" alt="Product Image" />
+    <img src="https://m.media-amazon.com/images/I/71Bzl3-gCqL._SY425_.jpg" alt="Product Image">
     <h3>Product Name</h3>
     <p>Short description of the product goes here. Highlight key features or benefits to attract attention.</p>
-    <a href="https://m.media-amazon.com/images/I/71Bzl3-gCqL._SY425_.jpg" target="_blank" rel="noopener noreferrer">Get It</a>
+    <a href="https://m.media-amazon.com/images/I/71Bzl3-gCqL._SY425_.jpgK" target="_blank">Get It</a>
   </div>
 </body>
 </html>
